@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAPPY FATHER'S DAY Papa! ❤️</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+}
+
+.hearts,.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+.star{
+position:absolute;
+color:white;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2;}
+50%{opacity:1;}
+}
+
+.heart{
+position:absolute;
+bottom:-20px;
+font-size:20px;
+animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-110vh);opacity:0;}
+}
+
+.container{
+position:relative;
+z-index:2;
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:30px 0;
+}
+
+.hero{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border-radius:25px;
+padding:40px;
+text-align:center;
+}
+
+.hero img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid white;
+margin-bottom:20px;
+}
+
+h1{font-size:3rem;}
+.subtitle{font-size:1.2rem;margin-bottom:20px;}
+.message{line-height:1.8;max-width:800px;margin:auto;}
+
+.btn{
+margin-top:25px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:white;
+color:#1e3a8a;
+font-weight:bold;
+cursor:pointer;
+}
+
+.gallery-section{margin-top:50px;}
+
+.gallery-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:.3s;
+border:3px solid rgba(255,255,255,.3);
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* POPUP LETTER */
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#333;
+padding:30px;
+border-radius:20px;
+display:none;
+z-index:999;
+max-width:700px;
+}
+
+/* IMAGE POPUP */
+.img-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeIn .3s ease;
+}
+
+.img-popup img{
+max-width:90%;
+max-height:80%;
+border-radius:20px;
+border:4px solid white;
+box-shadow:0 0 30px rgba(255,255,255,0.3);
+animation:zoomIn .3s ease forwards;
+}
+
+@keyframes zoomIn{
+from{transform:scale(0.7);}
+to{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.close{
+margin-top:15px;
+padding:10px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="hearts"></div>
+
+<div class="container">
+
+<div class="hero">
+
+<img src="https://www.image2url.com/r2/default/images/1781143544382-4744444e-33ff-4f75-829c-49aa5e8bba51.jpg" alt="Tatay">
+
+<h1>👨 HAPPY FATHER'S DAY PA! 👨</h1>
+
+<p class="subtitle">Para sa aming pinakamamahal na Papa ❤️</p>
+
+<p class="message">
+Hindi sapat ang mga salita upang maipahayag ang aming pasasalamat sa lahat ng iyong sakripisyo at pagmamahal.
+</p>
+
+<button class="btn" onclick="showLetter()">💌 Buksan ang Mensahe</button>
+
+</div>
+
+<div class="gallery-section">
+
+<h2 class="gallery-title">📸 PHOTOS</h2>
+
+<div class="gallery">
+
+<img src="https://www.image2url.com/r2/default/images/1781142780825-136403e5-6024-4a0b-bcb6-612576d9989a.jpg" onclick="openImg(this.src)">
+<img src="https://www.image2url.com/r2/default/images/1781142902932-99f3dad1-e0ae-473e-9950-02f3895cd0c7.jpg" onclick="openImg(this.src)">
+<img src="https://www.image2url.com/r2/default/images/1781142975590-3ed366ac-2ff3-42ed-a5bf-46164a972ffc.jpg" onclick="openImg(this.src)">
+<img src="https://www.image2url.com/r2/default/images/1781143616800-6092bb81-88fb-4a17-9553-27df3fd816bc.jpg" onclick="openImg(this.src)">
+
+</div>
+
+</div>
+
+<footer>❤️ Mahal na mahal ka namin, Papa ❤️</footer>
+
+</div>
+
+<!-- LETTER POPUP -->
+<div class="popup" id="popup">
+<h2>💌 Para kay Papa</h2>
+
+<p>
+Happy Father's Day, Papa! 
+Maraming salamat sa lahat ng iyong pagmamahal, sakripisyo, at walang sawang pagsisikap para sa aming pamilya. 
+Salamat sa bawat payo, suporta, at gabay na ibinigay mo sa amin. 
+Ikaw ang aming inspirasyon at lakas sa bawat hamon ng buhay. 
+Hindi man namin ito palaging nasasabi, sobrang nagpapasalamat kami na ikaw ang aming ama.
+
+Dalangin namin na bigyan ka pa ng Diyos ng mabuting kalusugan, mahabang buhay, at maraming masasayang alaala kasama ang pamilya.
+Hinding-hindi namin malilimutan ang lahat ng iyong ginawa para sa amin. Mahal na mahal ka namin at lagi kaming proud na ikaw ang aming Papa.
+❤️ Happy Father's Day! 👨‍👧‍👦
+
+</p>
+
+<button class="close" onclick="closeLetter()">Close</button>
+</div>
+
+<!-- IMAGE POPUP -->
+<div class="img-popup" id="imgPopup" onclick="closeImg()">
+<img id="popupImg">
+</div>
+
+<script>
+
+function showLetter(){
+document.getElementById("popup").style.display="block";
+confetti();
+}
+
+function closeLetter(){
+document.getElementById("popup").style.display="none";
+}
+
+function openImg(src){
+document.getElementById("imgPopup").style.display="flex";
+document.getElementById("popupImg").src=src;
+}
+
+function closeImg(){
+document.getElementById("imgPopup").style.display="none";
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+document.querySelector(".hearts").appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+}
+
+setInterval(createHeart,300);
+
+for(let i=0;i<50;i++){
+const star=document.createElement("div");
+star.className="star";
+star.innerHTML="✦";
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+document.querySelector(".stars").appendChild(star);
+}
+
+function confetti(){
+for(let i=0;i<100;i++){
+const c=document.createElement("div");
+c.innerHTML=["🎉","✨","❤️","🎊"][Math.floor(Math.random()*4)];
+c.style.position="fixed";
+c.style.left=Math.random()*100+"vw";
+c.style.top="-20px";
+c.style.fontSize="20px";
+document.body.appendChild(c);
+
+c.animate([
+{transform:"translateY(0)"},
+{transform:"translateY(100vh) rotate(360deg)"}
+],{duration:3000});
+
+setTimeout(()=>c.remove(),4000);
+}
+}
+
+</script>
+
+</body>
+</html>
